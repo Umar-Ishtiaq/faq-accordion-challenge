@@ -1,15 +1,15 @@
-const p = document.getElementById('plus')
+const plus = document.querySelectorAll('.plus')
 
-
-p.addEventListener('click', ()=> {
-    console.log('click')
-    const e = document.getElementById('one')
+plus.forEach(image => {
+    image.addEventListener('click', ()=> {
+        const id = image.id
+        const e = document.querySelector(`p#${id}`)
     if(e.classList.contains('hidden')){
-        p.src = './assets/images/icon-minus.svg'
+        image.src = './assets/images/icon-minus.svg'
         e.classList.remove('hidden')
     } else {
         e.classList.add('hidden')
-        p.src = './assets/images/icon-plus.svg'
+        image.src = './assets/images/icon-plus.svg'
     }
-    
+    })
 })
